@@ -11,9 +11,10 @@ Code has been slightly modified from the original project located [here](https:/
 
 ### How to Run
 1. Compile a JAR of the latest version of the OAuth extentsion, since some classes are missing in the `2.2-M3` release. Update the Maven dependency based the compiled JAR's location. (The lib folder has the JAR file I compiled.)
-2. Run the following maven command:
->
-> mvn exec:java
+2. Run the project using Maven, or run the OAuth2Sample class.
+  >
+  > mvn exec:java
+  >
 3. Open your web browser to [http://localhost:8080/sample/](http://localhost:8080/sample/)
 4. Click on the login button.
 5. Login with the example user `bob` and password `123456`.

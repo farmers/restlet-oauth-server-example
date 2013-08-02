@@ -1,14 +1,13 @@
-
 # External Service Authentication using Restlet OAuth
 An example of OAuth external service that uses the Restlet OAuth example server.
 
-### Restlet OAuth Server security flaw
-Please note that the example server is flawed which I have detailed (here)[http://bretkikehara.wordpress.com/2013/08/01/restlet-2-2-oauth/].
+### Restlet Example OAuth Provider Security Flaw
+Please note that the example server is flawed which I have detailed [here](http://bretkikehara.wordpress.com/2013/08/01/restlet-2-2-oauth/).
 
-Although the implementation is not fully secure, (i.e. no HTTPS implementation), it is sufficient enough to prove that how to implment an OAuth sevice using the Restlet framework.
+Although the implementation is not fully secure in many ways, it is sufficient enough to provide an implementation an OAuth sevice and external access using the Restlet framework.
 
 ### Notice
-Code has been slightly modified from the original project located (here)[https://github.com/restlet/restlet-framework-java].
+Code has been slightly modified from the original project located [here](https://github.com/restlet/restlet-framework-java).
 
 ### How to Run
 1. Compile a JAR of the latest version of the OAuth extentsion, since some classes are missing in the `2.2-M3` release. Update the Maven dependency based the compiled JAR's location. (The lib folder has the JAR file I compiled.)

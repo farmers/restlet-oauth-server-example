@@ -12,6 +12,7 @@ Code has been slightly modified from the original project located [here](https:/
 ### How to Run
 1. Compile a JAR of the latest version of the OAuth extentsion, since some classes are missing in the `2.2-M3` release. Update the Maven dependency based the compiled JAR's location. (The lib folder has the JAR file I compiled.)
 2. Run the project using Maven, or run the OAuth2Sample class.
+
   >
   > mvn exec:java
   >

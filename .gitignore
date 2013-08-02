@@ -1,0 +1,21 @@
+# system files
+.DS_Store
+Thumbs.db
+
+# java
+*.class
+
+# eclipse
+.settings/
+.classpath
+.project
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# maven
+target/
+bin
+.bak/

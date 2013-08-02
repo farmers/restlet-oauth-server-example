@@ -1,6 +1,8 @@
 package org.restlet.example.ext.oauth.server.external;
 
 import java.util.logging.Level;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.restlet.data.ChallengeScheme;
 import org.restlet.data.CookieSetting;
 import org.restlet.data.Form;
@@ -13,7 +15,6 @@ import org.restlet.resource.ClientResource;
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
 import org.restlet.util.Series;
-import com.google.gson.Gson;
 import freemarker.template.Configuration;
 
 public class PopupResource extends ServerResource {
@@ -51,17 +52,19 @@ public class PopupResource extends ServerResource {
       content = "";
     }
 
-    Gson gson = new Gson();
-    TokenModel token = gson.fromJson(content, TokenModel.class);
-
     getLogger().log(Level.INFO, "response: " + content);
 
-    if (token != null) {
-      Series<CookieSetting> cs = getResponse().getCookieSettings();
-      cs.add(0, new CookieSetting("token_type", token.getTokenType()));
-      cs.add(1, new CookieSetting("access_token", token.getAccessToken()));
-      cs.add(2, new CookieSetting("refresh_token", token.getRefreshToken()));
+    Series<CookieSetting> cs = getResponse().getCookieSettings();
+    try {
+      JSONObject json = new JSONObject(content);
+      cs.add(0, new CookieSetting("token_type", json.getString("token_type")));
+      cs.add(1, new CookieSetting("access_token", json.getString("access_token")));
+      cs.add(2, new CookieSetting("refresh_token", json.getString("refresh_token")));
       setStatus(Status.SUCCESS_OK);
+    }
+    catch (JSONException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
     }
 
     Configuration config = new Configuration();

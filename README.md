@@ -9,3 +9,18 @@ Although the implementation is not fully secure, (i.e. no HTTPS implementation),
 
 ### Notice
 Code has been slightly modified from the original project located (here)[https://github.com/restlet/restlet-framework-java].
+
+### How to Run
+1. Compile a JAR of the latest version of the OAuth extentsion, since some classes are missing in the `2.2-M3` release. Update the Maven dependency based the compiled JAR's location. (The lib folder has the JAR file I compiled.)
+2. Run the following maven command:
+>
+> mvn exec:java
+3. Open your web browser to [http://localhost:8080/sample/](http://localhost:8080/sample/)
+4. Click on the login button.
+5. Login with the example user `bob` and password `123456`.
+6. Accept or deny the request for default scope.
+
+### License
+All source code from the Restlet project is license under the Apache 2.0 license with copyright as its respective owners.
+
+Code that I have written is also license under the Apache 2.0 license for simplicity sake.
